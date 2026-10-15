@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class StageMove : MonoBehaviour
 {
     private InputAction moveInput;
-
+    public float threshold = 0.2f;
 
     void Start()
     {
@@ -16,7 +16,6 @@ public class StageMove : MonoBehaviour
         Debug.Log(moveInput.ReadValue<Vector2>());
 
         Vector3 rotation;
-        float threshold = 0.2f;
         rotation = new Vector3(moveInput.ReadValue<Vector2>().y*threshold, 0, moveInput.ReadValue<Vector2>().x*threshold);
 
         this.transform.Rotate(rotation);
