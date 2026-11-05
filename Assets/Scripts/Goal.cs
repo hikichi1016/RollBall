@@ -8,7 +8,10 @@ public class Goal : MonoBehaviour
     private TextMeshProUGUI goalText;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
-        goalText.enabled = true;
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log(other.name);
+            goalText.enabled = true;
+        }
     }
 }
